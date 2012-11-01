@@ -4,7 +4,7 @@ public class PickANumberGUI extends javax.swing.JFrame {
     
 //    private int secretNumber;
     private RandomNumberGenerator rng = new RandomNumberGenerator();
-    private RadioButtonSelectionStrategy rdoStrategy = new RadioButtonSelectionStrategy();
+    private NumberComparisonSelectionStrategy rdoStrategy = new NumberComparisonSelectionStrategy();
     /**
      * Creates new form PickANumberGUI
      */
@@ -46,7 +46,6 @@ public class PickANumberGUI extends javax.swing.JFrame {
         rdoSix = new javax.swing.JRadioButton();
         rdoSeven = new javax.swing.JRadioButton();
         rdoEight = new javax.swing.JRadioButton();
-        lblResults = new javax.swing.JLabel();
         rdoNine = new javax.swing.JRadioButton();
         rdoTen = new javax.swing.JRadioButton();
         rdoEleven = new javax.swing.JRadioButton();
@@ -107,9 +106,6 @@ public class PickANumberGUI extends javax.swing.JFrame {
         btnGrpChoices.add(rdoEight);
         rdoEight.setText("5");
 
-        lblResults.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        lblResults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         btnGrpChoices.add(rdoNine);
         rdoNine.setText("12");
 
@@ -143,9 +139,7 @@ public class PickANumberGUI extends javax.swing.JFrame {
                         .add(btnSelection)
                         .add(10, 10, 10))
                     .add(JPanelLayout.createSequentialGroup()
-                        .add(14, 14, 14)
-                        .add(lblResults, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(14, 83, Short.MAX_VALUE)
                         .add(JPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.CENTER)
                             .add(rdoThree)
                             .add(rdoOne)
@@ -198,23 +192,18 @@ public class PickANumberGUI extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(JPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(JPanelLayout.createSequentialGroup()
-                        .add(JPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(JPanelLayout.createSequentialGroup()
-                                .add(rdoSix)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(rdoFive))
-                            .add(JPanelLayout.createSequentialGroup()
-                                .add(rdoTen)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(rdoNine))
-                            .add(JPanelLayout.createSequentialGroup()
-                                .add(rdoThree)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(rdoFour)))
-                        .add(36, 36, 36))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, JPanelLayout.createSequentialGroup()
-                        .add(lblResults, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(19, 19, 19)))
+                        .add(rdoSix)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(rdoFive))
+                    .add(JPanelLayout.createSequentialGroup()
+                        .add(rdoTen)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(rdoNine))
+                    .add(JPanelLayout.createSequentialGroup()
+                        .add(rdoThree)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(rdoFour)))
+                .add(36, 36, 36)
                 .add(JPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(btnExit)
                     .add(btnSelection))
@@ -253,8 +242,8 @@ public class PickANumberGUI extends javax.swing.JFrame {
 
     private void btnSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectionActionPerformed
         String radioChoice = this.btnGrpChoices.getSelection().getActionCommand();
-//        this.lblResults.setText(this.rdoStrategy.determineIfThereWasAMatch(rng, radioChoice));
-        this.txtResults.setText(this.rdoStrategy.determineIfThereWasAMatch(rng, radioChoice));
+//        this.lblResults.setText(this.rdoStrategy.compareTheNumbers(rng, radioChoice));
+        this.txtResults.setText(this.rdoStrategy.compareTheNumbers(rng, radioChoice));
 //        this.txtResults.setText(this.rdoStrategy.getNumberOfGuesses());
     }//GEN-LAST:event_btnSelectionActionPerformed
 
@@ -269,7 +258,6 @@ public class PickANumberGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btnGrpChoices;
     private javax.swing.JButton btnSelection;
     private javax.swing.JLabel lblInstructions;
-    private javax.swing.JLabel lblResults;
     private javax.swing.JRadioButton rdoEight;
     private javax.swing.JRadioButton rdoEleven;
     private javax.swing.JRadioButton rdoFive;

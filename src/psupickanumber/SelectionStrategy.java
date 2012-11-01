@@ -1,5 +1,5 @@
 package psupickanumber;
 
 public interface SelectionStrategy {
-    public abstract String determineIfThereWasAMatch(RandomNumberGenerator rng, String theChoice);
+    public abstract String compareTheNumbers(RandomNumberGenerator rng, String theChoice);
 }

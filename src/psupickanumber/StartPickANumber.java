@@ -19,7 +19,8 @@ public class StartPickANumber {
         // after all pending threads are processed.
         java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                        new PickANumberGUI().setVisible(true);
+//                        new PickANumberGUI().setVisible(true);
+                        new PickANumberDropDownGUI().setVisible(true);
                 }
         });
     }
