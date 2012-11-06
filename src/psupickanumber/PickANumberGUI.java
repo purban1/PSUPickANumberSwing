@@ -10,6 +10,8 @@ public class PickANumberGUI extends javax.swing.JFrame {
      */
     public PickANumberGUI() {
         initComponents();
+        setVisible(true);
+        this.setLocationRelativeTo(this);
         this.rdoOne.setActionCommand(this.rdoOne.getText());
         this.rdoTwo.setActionCommand(this.rdoTwo.getText());
         this.rdoThree.setActionCommand(this.rdoThree.getText());

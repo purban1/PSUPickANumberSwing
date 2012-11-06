@@ -12,6 +12,8 @@ public class PickANumberDropDownGUI extends javax.swing.JFrame {
      */
     public PickANumberDropDownGUI() {
         initComponents();
+        setVisible(true);
+        this.setLocationRelativeTo(this);
         currentSelection = this.ddlNumberChoice.getSelectedItem();
         selectionString = currentSelection.toString();
         System.out.println(selectionString);

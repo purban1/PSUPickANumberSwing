@@ -7,7 +7,7 @@ public class RandomNumberGenerator {
     private int secretNumber;
     
     public RandomNumberGenerator(){
-        Random rn = new Random();
+        Random rn = new Random(System.nanoTime());
         int random = rn.nextInt(12) + 1;
         this.setSecretNumber(random);
     }

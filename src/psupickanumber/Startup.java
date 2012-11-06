@@ -2,7 +2,7 @@ package psupickanumber;
 
 import javax.swing.UIManager;
 
-public class StartPickANumber {
+public class Startup {
 
     public static void main(String[] args) {
         try {
@@ -19,8 +19,9 @@ public class StartPickANumber {
         // after all pending threads are processed.
         java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-//                        new PickANumberGUI().setVisible(true);
-                        new PickANumberDropDownGUI().setVisible(true);
+                    System.out.println("hello");    
+//                    new PickANumberGUI().setVisible(true);
+                        new PickANumberDropDownGUI();
                 }
         });
     }
